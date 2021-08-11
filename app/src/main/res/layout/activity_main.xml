@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/apppPicture"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/snow"
+        android:scaleX="4"
+        android:background="@drawable/rounded"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/backColor"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/circlenormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ramos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circlenormal" />
+
+            <TextView
+                android:id="@+id/nameID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Sergio Ramos"
+                android:textColor="#000"
+                android:textSize="24dp"
+                app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_friends__1_"
+                app:layout_constraintTop_toTopOf="@id/nameID"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="6dp"
+                app:layout_constraintStart_toEndOf="@id/nameID"/>
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Madrid,Spain"
+                android:textColor="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/nameID"
+                app:layout_constraintTop_toBottomOf="@id/nameID" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/callIcon"
+                style="@style/circleLittle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_telephone"
+                app:layout_constraintStart_toStartOf="@id/textLocation"
+                app:layout_constraintTop_toBottomOf="@id/textLocation"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call"
+                android:layout_marginLeft="2dp"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/callIcon"
+                app:layout_constraintTop_toBottomOf="@id/callIcon"
+                android:textColor="@color/gray"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/messageIcon"
+                style="@style/circleLittle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_messenger"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintStart_toEndOf="@id/callIcon"
+                app:layout_constraintTop_toTopOf="@id/callIcon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Message"
+                app:layout_constraintEnd_toEndOf="@id/messageIcon"
+                android:textColor="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/messageIcon"
+                app:layout_constraintTop_toBottomOf="@id/messageIcon"
+                android:layout_marginTop="4dp"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/moreIcon"
+                style="@style/circleLittle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_more"
+                app:layout_constraintStart_toEndOf="@+id/messageIcon"
+                app:layout_constraintTop_toTopOf="@id/messageIcon"
+                android:layout_marginLeft="32dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More"
+                android:textColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="@id/moreIcon"
+                app:layout_constraintStart_toStartOf="@id/moreIcon"
+                app:layout_constraintTop_toBottomOf="@id/moreIcon"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/actionList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+                app:layout_constraintTop_toBottomOf="@id/shapeableImageView"
+                android:layout_marginTop="64dp"
+                style="@style/circlenormal">
+                <ImageView
+                    android:id="@+id/timeline"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_timeline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/timelinetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timeline"
+                    android:textColor="@color/gray"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@id/timeline"
+                    app:layout_constraintTop_toBottomOf="@id/timeline"/>
+                <ImageView
+                    android:id="@+id/about"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_user"
+                    app:layout_constraintTop_toTopOf="@id/timeline"
+                    app:layout_constraintStart_toStartOf="@id/timeline"
+                    android:layout_marginLeft="80dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textColor="@color/gray"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@id/about"
+                    app:layout_constraintTop_toBottomOf="@id/about"/>
+                <ImageView
+                    android:id="@+id/friends"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_friends"
+                    app:layout_constraintStart_toStartOf="@id/about"
+                    app:layout_constraintTop_toTopOf="@id/about"
+                    android:layout_marginLeft="80dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/friends"
+                    app:layout_constraintTop_toBottomOf="@id/friends"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray"
+                    android:text="Friends"/>
+                <ImageView
+                    android:id="@+id/photos"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_photo_24"
+                    app:layout_constraintStart_toStartOf="@id/friends"
+                    app:layout_constraintTop_toTopOf="@id/friends"
+                    android:layout_marginLeft="80dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photos"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/photos"
+                    app:layout_constraintTop_toBottomOf="@id/photos"
+                    android:textSize="10sp"/>
+                <ImageView
+                    android:id="@+id/more"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more__1_"
+                    app:layout_constraintStart_toStartOf="@id/photos"
+                    app:layout_constraintTop_toTopOf="@id/photos"
+                    android:layout_marginLeft="80dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="More"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/more"
+                    app:layout_constraintTop_toBottomOf="@id/more"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/kmpabi"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/mpabie"
+                app:layout_constraintTop_toBottomOf="@id/actionList"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/circleLittle" />
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/kmpabi"
+                app:layout_constraintBottom_toBottomOf="@id/kmpabi"
+                android:layout_marginLeft="10dp"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                android:padding="8dp"
+                android:background="@drawable/rounded"
+                android:hint="write something to Ramos..." />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toEndOf="@id/editText"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                style="@style/circleLittle"
+                android:layout_marginBottom="3dp"
+                android:src="@drawable/ic_plus"
+                android:layout_marginLeft="6dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/myCon"
+                style="@style/circlelarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="@id/kmpabi"
+                app:layout_constraintTop_toBottomOf="@id/editText">
+
+                <TextView
+                    android:id="@+id/photoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Photos"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="64dp"
+                    android:text="150"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/photoText"
+                    app:layout_constraintTop_toTopOf="@id/photoText" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_photo_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/bike"
+                    android:layout_width="128dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/byke"
+                    app:layout_constraintStart_toStartOf="@id/photoText"
+                    app:layout_constraintTop_toBottomOf="@id/photoText"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/starbucks"
+                    android:layout_width="100dp"
+                    android:layout_height="64dp"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/starbucks"
+                    app:layout_constraintStart_toEndOf="@+id/bike"
+                    app:layout_constraintTop_toTopOf="@+id/bike"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="64dp"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/iceman"
+                    app:layout_constraintStart_toEndOf="@+id/starbucks"
+                    app:layout_constraintTop_toTopOf="@+id/starbucks"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/women"
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/women"
+                    app:layout_constraintStart_toStartOf="@id/starbucks"
+                    app:layout_constraintTop_toBottomOf="@+id/starbucks"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="136dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dog"
+                    app:layout_constraintStart_toStartOf="@id/women"
+                    app:layout_constraintTop_toTopOf="@id/women"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <TextView
+                    android:id="@+id/seeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="See More"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/women"
+                    app:layout_constraintTop_toBottomOf="@id/women" />
+
+                <ImageView
+                    android:id="@+id/down"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    app:layout_constraintStart_toStartOf="@id/seeMore"
+                    app:layout_constraintTop_toBottomOf="@id/seeMore" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/circlelarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="@id/myCon"
+                app:layout_constraintTop_toBottomOf="@id/myCon">
+
+                <TextView
+                    android:id="@+id/friends1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friends"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="64dp"
+                    android:text="18"
+                    android:textColor="@color/gray"
+                    app:layout_constraintBaseline_toBaselineOf="@id/friends1"
+                    app:layout_constraintStart_toStartOf="@id/friends1"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_friends__1_"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/cristiano"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cristiano"
+                    app:layout_constraintEnd_toStartOf="@+id/salah"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/friends1"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <TextView
+                    android:id="@+id/cristianText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cristiano Ronaldo"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/cristiano"
+                    app:layout_constraintTop_toBottomOf="@id/cristiano" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 4 matural Friends"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/cristianText"
+                    app:layout_constraintTop_toBottomOf="@id/cristianText" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/salah"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/salah"
+                    app:layout_constraintEnd_toStartOf="@+id/hazard"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/cristiano"
+                    app:layout_constraintTop_toTopOf="@id/cristiano"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <TextView
+                    android:id="@+id/salahtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="Mo.Salah"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/salah"
+                    app:layout_constraintTop_toBottomOf="@id/salah" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 matural Friends"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/salahtext"
+                    app:layout_constraintTop_toBottomOf="@id/salahtext" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/hazard"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hazard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/salah"
+                    app:layout_constraintTop_toTopOf="@id/salah"
+                    app:shapeAppearanceOverlay="@style/circleLittle" />
+
+                <TextView
+                    android:id="@+id/hazardtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edin Hazard"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/hazard"
+                    app:layout_constraintTop_toBottomOf="@id/hazard" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 matural Friends"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/hazardtext"
+                    app:layout_constraintTop_toBottomOf="@id/hazardtext" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
